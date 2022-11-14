@@ -43,17 +43,15 @@ label {
 }
 
 /*Especificidad:011*/
-input[type=button]  {
-    color:black;
-    background-color: rgb(204, 189, 189);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 60%;
-    margin: 30%;
-    border-radius: 5%;
-    width: 60%;
-    height: 60%;
+label[for="currentnum"] {
+    color: rgb(255, 255, 255);
+    background-color: rgba(248, 248, 248, 0);
+    grid-row-start: 4;
+    grid-column: span 1;
     text-align: center;
+    padding-top: 1.5em;
 }
+
 /*Especificidad:001*/
 button{
     font-size: 1.2em;
@@ -73,7 +71,10 @@ button[ value = "ENTER"]{
 
 /*Especificidad:021*/
 input[type=text][name='currentnum'] {
-    grid-column: span 4;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-column: span 3;
+    grid-row-start: 4;
     color: black;
     background-color: rgb(212, 255, 246);
     width: 100%;
