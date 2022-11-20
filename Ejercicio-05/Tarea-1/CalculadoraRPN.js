@@ -111,6 +111,10 @@ class CalculadoraRPN{
         document.querySelector('input[type=text][name=\"currentnum\"]').value = "";
         document.querySelector('textarea[name=\"pantalla\"]').innerHTML = "";
     }
+    //función que imprime el punto de los decimales
+    decimal() {
+        document.querySelector('input[type=text][name=\"currentnum\"]').value += ".";
+    }
 }
 var pila = new Pila();//creamos la pila
 calculadora = new CalculadoraRPN(pila);//creamos la calculadora
