@@ -115,6 +115,12 @@ class CalculadoraRPN{
     decimal() {
         document.querySelector('input[type=text][name=\"currentnum\"]').value += ".";
     }
+    //función raíz cuadrada
+    sqrt(){
+        var num = Math.sqrt(Number(document.querySelector('input[type=text][name=\"pantalla\"]').value));
+		document.querySelector('input[type=text][name=\"pantalla\"]').value = num;
+		this.solved = true;
+    }
 }
 var pila = new Pila();//creamos la pila
 calculadora = new CalculadoraRPN(pila);//creamos la calculadora
@@ -138,6 +144,9 @@ document.addEventListener('keydown', function (event) {
     if(event.key === 'Enter'){//Enter
         event.preventDefault();
         calculadora.enter();
+    }
+    if(event.key === ',' || event.key === '.'){//decimal
+        calculadora.digito('.');
     }
     if(event.key === 'Delete'){//Borrar todo
         event.preventDefault();
