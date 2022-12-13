@@ -121,6 +121,12 @@ class CalculadoraRPN{
 		document.querySelector('input[type=text][name=\"pantalla\"]').value = num;
 		this.solved = true;
     }
+    //función que borra el último elemento
+    deleteOne() {
+        var aux = document.querySelector('input[type=text][name=\"currentnum\"]').value;
+        console.log(aux);
+        document.querySelector('input[type=text][name=\"currentnum\"]').value = aux.slice(0, -1);
+    }
 }
 var pila = new Pila();//creamos la pila
 calculadora = new CalculadoraRPN(pila);//creamos la calculadora
@@ -151,5 +157,9 @@ document.addEventListener('keydown', function (event) {
     if(event.key === 'Delete'){//Borrar todo
         event.preventDefault();
         calculadora.empty();
+    }
+    if(event.key === 'Backspace'){//tecla backspace
+        event.preventDefault();
+        calculadora.deleteOne();
     }
   });

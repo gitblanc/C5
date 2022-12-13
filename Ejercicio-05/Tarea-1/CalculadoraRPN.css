@@ -71,8 +71,8 @@ button[ value = "ENTER"]{
 
 /*Especificidad:021*/
 button[ value = "raiz"]{
-    width: 15.5em;
-    grid-column: span 4;
+    width: 11.5em;
+    grid-column: span 3;
 }
 
 /*Especificidad:021*/
